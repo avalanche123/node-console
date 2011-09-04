@@ -1,0 +1,16 @@
+{
+  "author": "Bulat Shakirzyanov <mallluhuct@gmail.com> (http://avalanche123.com)",
+  "name": "browser-shell",
+  "description": "a shell in your browser",
+  "version": "0.1.0",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": "~v0.4.11"
+  },
+  "dependencies": {
+    "socket.io": "latest"
+  },
+  "devDependencies": {}
+}
