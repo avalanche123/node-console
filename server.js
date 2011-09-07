@@ -31,11 +31,14 @@ io.listen(app).sockets.on('connection', function (socket) {
     socket.disconnect();
   })
 
-  ['stdout', 'stderr'].forEach(function(stream) {
-    shell[stream].setEncoding('ascii');
-    shell[stream].on('data', function(data) {
-      socket.emit(stream, data);
-    })
+  shell['stdout'].setEncoding('ascii');
+  shell['stdout'].on('data', function(data) {
+    socket.emit('stdout', data);
+  });
+
+  shell['stderr'].setEncoding('ascii');
+  shell['stderr'].on('data', function(data) {
+    socket.emit('stderr', data);
   });
 
   socket.on('stdin', function(command) {
